@@ -9,3 +9,4 @@ def reverse_str(my_str):
 my_string = input('Enter your string:')
 print(f"Given String: {my_string}")
 print(f"reversed String: {reverse_str(my_string)}")
+
