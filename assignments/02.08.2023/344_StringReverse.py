@@ -1,12 +1,7 @@
-def reverse_str(my_str):
-   if len(my_str) == 0:
-      return my_str
-   else:
-      return reverse_str(my_str[1:]) + my_str[0]
-
-
-# Run
-my_string = input('Enter your string:')
-print(f"Given String: {my_string}")
-print(f"reversed String: {reverse_str(my_string)}")
-
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        def backtrack(left, right):
+            if left < right:
+                s[left] , s[right] = s[right] , s[left]
+                backtrack(left + 1 , right - 1)
+        backtrack( 0 , len(s) - 1)    
