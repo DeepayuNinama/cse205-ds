@@ -11,4 +11,5 @@ def isPowerOfTwo(n):
 
 # Example usage:
 n = 16
-print(isPowerOfTwo(n))  # Output: True
+print(isPowerOfTwo(n))
+  # Output: True       
