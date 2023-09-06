@@ -53,8 +53,51 @@ class LinkedList:
             while n.next is not None:
                 #Incrementing n (moving one step tracking the node)
                 n = n.next
-            n.next = new_node    
+            n.next = new_node 
 
+    def after_node(self,data,x):
+
+        n = self.head
+
+        while n is not None:
+
+            if x == n.data:
+                break
+            n = n.next
+        if n is None:
+            print("Node is not present in the Linked List")
+
+        else:
+            new_node = Node(data)
+            new_node.next = n.next
+            n.next = new_node
+
+    def add_before(self,data,x):
+
+        if self.head is None:
+            print("Linked List is Empty!")
+            return
+        
+        if self.head.data == x:
+            new_node = Node(data)
+            new_node.next = self.head
+            self.head = new_node
+            return
+        
+        n = new_node
+
+        while n.next is not None:
+
+            if n.next.data == x:
+                break
+            n = n.next
+        if n.next is None:
+            print("Node not found!")
+
+        else:
+            new_node = Node(data)
+            new_node.next = n.next
+            n.next = new_node        
 
 
 
@@ -65,5 +108,12 @@ LL1.add_begining(9)
 LL1.add_begining(8)
 
 # Adding at the END
-LL1.add_end(10)
+LL1.add_end(11)
+
+#Inserting a new node b/w two node
+LL1.after_node(10,9)
+
+# Inserting before node
+LL1.add_before(7,8)
+
 LL1.print_LL()         
