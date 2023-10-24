@@ -1,0 +1,22 @@
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        arr1.sort()
+        arr2.sort()
+
+        result = []
+        len_arr1 = len(arr1)
+        len_arr2 = len(arr2)
+
+        i = j = 0
+
+        while i < len_arr1 and j < len_arr2:
+
+            if arr1[i] == arr2[j]:
+                result.append(arr2[j])
+                j += 1
+            else:
+                i += 1
+
+        return result
+
+
